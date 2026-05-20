@@ -1,6 +1,10 @@
-// References renders a grid of professional reference cards.
 export default function References({ data }) {
-  if (!data.length) return <section className="section"><p className="loading">Loading...</p></section>
+  if (!data.length) return (
+    <section className="section" id="references">
+      <h2 className="section-title">References</h2>
+      <p className="references-on-request">Available upon request.</p>
+    </section>
+  )
 
   return (
     <section className="section" id="references">

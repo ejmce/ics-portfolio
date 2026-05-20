@@ -415,6 +415,11 @@
   border-bottom: 1px solid var(--border);
 }
 
+.references-on-request {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .reference-email {
   font-size: 0.85rem;
   color: var(--accent);
