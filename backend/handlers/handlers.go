@@ -29,3 +29,7 @@ func GetProjects(w http.ResponseWriter, r *http.Request) {
 func GetReferences(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, data.References)
 }
+
+func GetEducation(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, data.Education)
+}

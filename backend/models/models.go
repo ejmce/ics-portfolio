@@ -32,3 +32,11 @@ type Reference struct {
 	Relationship string `json:"relationship"`
 	Contact      string `json:"contact"`
 }
+
+// Education describes a degree or certification.
+type Education struct {
+	School  string `json:"school"`
+	Degree  string `json:"degree"`
+	Year    string `json:"year"`
+	Location string `json:"location"`
+}
