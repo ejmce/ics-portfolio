@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Profile from './components/Profile'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
@@ -14,6 +14,7 @@ function App() {
   const [references, setReferences] = useState([])
   const [education, setEducation] = useState([])
   const [experience, setExperience] = useState([])
+  const [activeSection, setActiveSection] = useState('about')
 
   useEffect(() => {
     Promise.all([
@@ -33,17 +34,32 @@ function App() {
     })
   }, [])
 
+  // Highlight the nav link for whichever section is currently in view.
+  // IntersectionObserver fires whenever a section crosses the viewport threshold.
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]')
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    )
+    sections.forEach(s => observer.observe(s))
+    return () => observer.disconnect()
+  }, [profile, experience, skills, projects, education, references])
+
   return (
     <div>
       <nav className="nav">
         <span className="nav-brand">{profile?.name ?? 'Portfolio'}</span>
         <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#references">References</a>
+          {['about','experience','skills','projects','education','references'].map(id => (
+            <a key={id} href={`#${id}`} className={activeSection === id ? 'nav-active' : ''}>
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
         </div>
       </nav>
 

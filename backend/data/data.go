@@ -123,15 +123,6 @@ var Education = []models.Education{
 	},
 }
 
-var References = []models.Reference{
-	// Add references here — confirm with each person before listing them.
-	// Example entry:
-	// {
-	// 	Name:         "Jane Smith",
-	// 	Title:        "Senior Software Engineer",
-	// 	Company:      "Iowa DOT",
-	// 	Relationship: "Former Manager",
-	// 	Email:        "jane.smith@iowadot.us",
-	//  Phone: 		  "555-111-9999",  
-	// },
-}
+// References is populated by references_local.go, which is gitignored.
+// See references_local.go.example for the format.
+var References = []models.Reference{}
