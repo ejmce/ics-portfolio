@@ -4,6 +4,7 @@ import (
 	"icsportfolio/handlers"
 	"log"
 	"net/http"
+	"os"
 )
 
 // cors wraps a handler to add permissive CORS headers so the React dev
@@ -32,6 +33,12 @@ func main() {
 	mux.HandleFunc("GET /api/education", handlers.GetEducation)
 	mux.HandleFunc("GET /api/experience", handlers.GetExperience)
 
-	log.Println("API server listening on http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", cors(mux)))
+	// Railway (and most cloud platforms) inject a PORT env var.
+	// Fall back to 8080 for local development.
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	log.Printf("API server listening on :%s\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, cors(mux)))
 }

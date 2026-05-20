@@ -16,14 +16,18 @@ function App() {
   const [experience, setExperience] = useState([])
   const [activeSection, setActiveSection] = useState('about')
 
+  // VITE_API_URL is set in Railway to the backend's public URL.
+  // Locally it is empty, so requests go to /api and are proxied by Vite.
+  const API = import.meta.env.VITE_API_URL ?? ''
+
   useEffect(() => {
     Promise.all([
-      fetch('/api/profile').then(r => r.json()),
-      fetch('/api/skills').then(r => r.json()),
-      fetch('/api/projects').then(r => r.json()),
-      fetch('/api/references').then(r => r.json()),
-      fetch('/api/education').then(r => r.json()),
-      fetch('/api/experience').then(r => r.json()),
+      fetch(`${API}/api/profile`).then(r => r.json()),
+      fetch(`${API}/api/skills`).then(r => r.json()),
+      fetch(`${API}/api/projects`).then(r => r.json()),
+      fetch(`${API}/api/references`).then(r => r.json()),
+      fetch(`${API}/api/education`).then(r => r.json()),
+      fetch(`${API}/api/experience`).then(r => r.json()),
     ]).then(([profileData, skillsData, projectsData, refsData, eduData, expData]) => {
       setProfile(profileData)
       setSkills(skillsData)
