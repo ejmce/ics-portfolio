@@ -29,7 +29,7 @@ var Skills = []models.Skill{
 	},
 	{
 		Category: "Cloud & DevOps",
-		Items:    []string{"Azure", "AWS", "IIS", "Azure DevOps", "Git"},
+		Items:    []string{"Azure", "AWS", "IIS", "Azure DevOps", "Git", "Docker"},
 	},
 	{
 		Category: "Tools",
