@@ -30,6 +30,7 @@ func main() {
 	mux.HandleFunc("GET /api/projects", handlers.GetProjects)
 	mux.HandleFunc("GET /api/references", handlers.GetReferences)
 	mux.HandleFunc("GET /api/education", handlers.GetEducation)
+	mux.HandleFunc("GET /api/experience", handlers.GetExperience)
 
 	log.Println("API server listening on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", cors(mux)))

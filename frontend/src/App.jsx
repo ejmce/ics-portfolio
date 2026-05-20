@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Profile from './components/Profile'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Experience from './components/Experience'
 import Education from './components/Education'
 import References from './components/References'
 import './App.css'
@@ -12,9 +13,8 @@ function App() {
   const [projects, setProjects] = useState([])
   const [references, setReferences] = useState([])
   const [education, setEducation] = useState([])
+  const [experience, setExperience] = useState([])
 
-  // useEffect runs once after the component mounts.
-  // We fetch all API endpoints in parallel using Promise.all.
   useEffect(() => {
     Promise.all([
       fetch('/api/profile').then(r => r.json()),
@@ -22,12 +22,14 @@ function App() {
       fetch('/api/projects').then(r => r.json()),
       fetch('/api/references').then(r => r.json()),
       fetch('/api/education').then(r => r.json()),
-    ]).then(([profileData, skillsData, projectsData, refsData, eduData]) => {
+      fetch('/api/experience').then(r => r.json()),
+    ]).then(([profileData, skillsData, projectsData, refsData, eduData, expData]) => {
       setProfile(profileData)
       setSkills(skillsData)
       setProjects(projectsData)
       setReferences(refsData)
       setEducation(eduData)
+      setExperience(expData)
     })
   }, [])
 
@@ -37,6 +39,7 @@ function App() {
         <span className="nav-brand">{profile?.name ?? 'Portfolio'}</span>
         <div className="nav-links">
           <a href="#about">About</a>
+          <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
@@ -46,6 +49,8 @@ function App() {
 
       <main>
         <Profile data={profile} />
+        <hr className="divider" />
+        <Experience data={experience} />
         <hr className="divider" />
         <Skills data={skills} />
         <hr className="divider" />

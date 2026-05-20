@@ -10,6 +10,7 @@ var Profile = models.Profile{
 	Summary:  "Software Developer with 4+ years of experience building scalable enterprise applications using C# and .NET. Strong background in RESTful API development, system architecture, and cross-functional collaboration. Currently expanding into Go and React to broaden full-stack capabilities.",
 	Email:    "mcelmee20@gmail.com",
 	GitHub:   "https://github.com/ejmce",
+	LinkedIn: "https://www.linkedin.com/in/ej-mcelmeel",
 	Location: "Nevada, IA",
 }
 
@@ -64,6 +65,52 @@ var Projects = []models.Project{
 		Description: "Responsive personal website built with HTML and CSS to showcase professional experience and projects. Focused on clean UI, accessibility, and performance.",
 		Tech:        []string{"HTML", "CSS"},
 		RepoURL:     "",
+	},
+}
+
+var Experience = []models.WorkExperience{
+	{
+		Company: "Iowa Department of Transportation",
+		Roles: []models.Role{
+			{Title: "Software Engineer ITS4", Period: "November 2023 – Present"},
+			{Title: "Software Engineer ITS3", Period: "November 2022 – November 2023"},
+		},
+		Bullets: []string{
+			"Lead backend developer for enterprise applications supporting statewide vehicle and identity systems",
+			"Designed, developed, and maintained scalable RESTful services using C# and .NET",
+			"Core contributor to the Iowa Mobile Identity platform, developing backend services and batch processing systems",
+			"Led development of legislative system enhancements (e.g., 2025 AnyCounty), aligning technical solutions with evolving business and regulatory requirements",
+			"Investigated and resolved complex production issues by analyzing system logs, database records, and third-party integrations",
+			"Designed and maintained batch jobs to process high-volume data efficiently and reliably",
+			"Performed SQL-based data validation and reconciliation with third-party systems to ensure data integrity",
+			"Wrote and executed unit and integration tests to ensure code quality and system stability",
+			"Created and maintained technical documentation for system architecture, workflows, and APIs",
+			"Contributed to Agile ceremonies including sprint planning, backlog refinement, and design discussions",
+		},
+	},
+	{
+		Company: "TeamLogic IT",
+		Roles: []models.Role{
+			{Title: "Systems Engineer", Period: "May 2022 – November 2022"},
+		},
+		Bullets: []string{
+			"Supported cloud and on-prem infrastructure across AWS and Azure environments (IaaS/PaaS)",
+			"Configured and maintained Windows Servers, Active Directory, and Microsoft 365",
+			"Managed virtualization platforms (VMware, Hyper-V) and network security infrastructure",
+			"Implemented backup and disaster recovery solutions using Datto and Synology",
+			"Delivered technical support via RMM tools, resolving complex system and network issues",
+		},
+	},
+	{
+		Company: "Staples",
+		Roles: []models.Role{
+			{Title: "Tech Services Associate", Period: "April 2021 – June 2022"},
+		},
+		Bullets: []string{
+			"Diagnosed and resolved hardware/software issues for individual and small business clients",
+			"Provided technical training on operating systems and productivity tools",
+			"Supported small business IT environments including workstation and network setup",
+		},
 	},
 }
 

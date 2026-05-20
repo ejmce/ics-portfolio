@@ -33,3 +33,7 @@ func GetReferences(w http.ResponseWriter, r *http.Request) {
 func GetEducation(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, data.Education)
 }
+
+func GetExperience(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, data.Experience)
+}

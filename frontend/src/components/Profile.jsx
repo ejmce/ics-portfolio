@@ -17,6 +17,11 @@ export default function Profile({ data }) {
           <a className="btn btn-primary" href={data.github} target="_blank" rel="noreferrer">
             GitHub
           </a>
+          {data.linkedin && (
+            <a className="btn btn-outline" href={data.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          )}
           <a className="btn btn-outline" href={`mailto:${data.email}`}>
             Contact Me
           </a>
