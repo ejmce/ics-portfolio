@@ -52,19 +52,19 @@ var Projects = []models.Project{
 		Name:        "Machine Learning Stock Analysis System",
 		Description: "Machine learning pipeline to analyze stock market data and generate buy/sell signals. Includes sentiment analysis on financial news, Twitter, and Reddit using Python to enhance prediction accuracy.",
 		Tech:        []string{"Python", "Machine Learning", "Sentiment Analysis", "Data Pipelines"},
-		RepoURL:     "",
+		RepoURL:     "https://github.com/ejmce/MLStockAlgorithm",
 	},
 	{
 		Name:        "Help Desk Application",
 		Description: "Full-stack helpdesk system that converts incoming emails into structured support tickets. Features an AI-assisted pipeline for email summarization and priority assignment, and a Kanban-style drag-and-drop interface.",
 		Tech:        []string{"Node.js", "SQLite", "Express", "OpenAI API"},
-		RepoURL:     "",
+		RepoURL:     "https://github.com/ejmce/HelpDeskApp",
 	},
 	{
 		Name:        "Personal Resume Website",
 		Description: "Responsive personal website built with HTML and CSS to showcase professional experience and projects. Focused on clean UI, accessibility, and performance.",
 		Tech:        []string{"HTML", "CSS"},
-		RepoURL:     "",
+		RepoURL:     "https://github.com/ejmce/AspPortfolioSite",
 	},
 }
 
