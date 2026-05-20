@@ -4,7 +4,7 @@ A full-stack portfolio web app built to learn **Go** and **React**.
 
 - **Backend**: Go REST API (`net/http`, standard library only)
 - **Frontend**: React + Vite
-- **Containerization**: Docker (coming soon)
+- **Containerization**: Docker
 
 ## Project Structure
 
