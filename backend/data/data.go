@@ -126,12 +126,12 @@ var Education = []models.Education{
 var References = []models.Reference{
 	// Add references here — confirm with each person before listing them.
 	// Example entry:
-	{
-		Name:         "Andy Frey",
-		Title:        "Senior Software Engineer -> Product Owner",
-		Company:      "Iowa DOT",
-		Relationship: "Former Manager",
-		Email:        "andrew.frey@dom.iowa.gov",
-		Phone:        "515-361-2160",
-	},
+	// {
+	// 	Name:         "Jane Smith",
+	// 	Title:        "Senior Software Engineer",
+	// 	Company:      "Iowa DOT",
+	// 	Relationship: "Former Manager",
+	// 	Email:        "jane.smith@iowadot.us",
+	//  Phone: 		  "555-111-9999",  
+	// },
 }
