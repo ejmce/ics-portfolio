@@ -1,0 +1,16 @@
+# Go binaries
+backend/*.exe
+backend/*.exe~
+
+# React build output and dependencies
+frontend/node_modules/
+frontend/dist/
+
+# Environment files (never commit secrets)
+.env
+.env.local
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
