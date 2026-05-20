@@ -65,4 +65,4 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 | Frontend framework | React 19 |
 | Frontend build tool | Vite |
 | Version control | Git + GitHub |
-| Containerization | Docker (planned) |
+| Containerization | Docker |
