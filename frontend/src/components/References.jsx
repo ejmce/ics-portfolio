@@ -12,7 +12,8 @@ export default function References({ data }) {
             <p className="reference-title">{ref.title}</p>
             <p className="reference-company">{ref.company}</p>
             <p className="reference-relationship">{ref.relationship}</p>
-            <p className="reference-contact">{ref.contact}</p>
+            <p className="reference-email">{ref.email}</p>
+            <p className="reference-phone">{ref.phone}</p>
           </div>
         ))}
       </div>

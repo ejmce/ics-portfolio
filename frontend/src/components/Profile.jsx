@@ -22,9 +22,6 @@ export default function Profile({ data }) {
               LinkedIn
             </a>
           )}
-          <a className="btn btn-outline" href={`mailto:${data.email}`}>
-            Contact Me
-          </a>
         </div>
       </div>
     </section>

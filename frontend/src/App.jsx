@@ -39,8 +39,8 @@ function App() {
         <span className="nav-brand">{profile?.name ?? 'Portfolio'}</span>
         <div className="nav-links">
           <a href="#about">About</a>
-          <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
           <a href="#references">References</a>
@@ -50,9 +50,9 @@ function App() {
       <main>
         <Profile data={profile} />
         <hr className="divider" />
-        <Experience data={experience} />
-        <hr className="divider" />
         <Skills data={skills} />
+        <hr className="divider" />
+        <Experience data={experience} />
         <hr className="divider" />
         <Projects data={projects} />
         <hr className="divider" />
