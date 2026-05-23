@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import Login from './components/Login'
 import Profile from './components/Profile'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
@@ -8,6 +9,17 @@ import References from './components/References'
 import './App.css'
 
 function App() {
+  // Persist login across page refreshes using sessionStorage.
+  // Session clears automatically when the browser tab is closed.
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () => sessionStorage.getItem('portfolio_auth') === 'true'
+  )
+
+  function handleLogin() {
+    sessionStorage.setItem('portfolio_auth', 'true')
+    setIsAuthenticated(true)
+  }
+
   const [profile, setProfile] = useState(null)
   const [skills, setSkills] = useState([])
   const [projects, setProjects] = useState([])
@@ -53,6 +65,8 @@ function App() {
     sections.forEach(s => observer.observe(s))
     return () => observer.disconnect()
   }, [profile, experience, skills, projects, education, references])
+
+  if (!isAuthenticated) return <Login onLogin={handleLogin} />
 
   return (
     <div>
