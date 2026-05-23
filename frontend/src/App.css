@@ -141,6 +141,20 @@
   border-bottom-color: #ffffff;
 }
 
+.nav-playground {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  border-bottom-color: transparent !important;
+  transition: color 0.2s;
+}
+
+.nav-playground:hover {
+  color: var(--accent-hover) !important;
+}
+
 /* ── Hero (About) ────────────────────────────────────────── */
 #about {
   min-height: 100vh;

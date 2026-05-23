@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
 import Login from './components/Login'
 import Profile from './components/Profile'
 import Skills from './components/Skills'
@@ -6,6 +7,7 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Education from './components/Education'
 import References from './components/References'
+import Playground from './pages/Playground'
 import './App.css'
 
 function App() {
@@ -70,7 +72,7 @@ function App() {
 
   if (!isAuthenticated) return <Login onLogin={handleLogin} />
 
-  return (
+  const portfolio = (
     <div>
       {/* Right-side dot navigation — dark class when over white sections */}
       <nav className={`dot-nav${activeSection !== 'about' ? ' dark' : ''}`}>
@@ -94,6 +96,7 @@ function App() {
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </a>
           ))}
+          <Link to="/playground" className="nav-playground">Playground</Link>
         </div>
       </nav>
 
@@ -115,6 +118,13 @@ function App() {
         Built with Go + React &mdash; {new Date().getFullYear()}
       </footer>
     </div>
+  )
+
+  return (
+    <Routes>
+      <Route path="/" element={portfolio} />
+      <Route path="/playground" element={<Playground />} />
+    </Routes>
   )
 }
 
