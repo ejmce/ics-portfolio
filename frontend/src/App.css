@@ -4,11 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
+  background: var(--hero-bg);
 }
 
 .login-card {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.12);
   padding: 3rem;
   width: 100%;
   max-width: 400px;
@@ -21,10 +21,11 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
+  color: var(--hero-text);
 }
 
 .login-subtitle {
-  color: var(--text-muted);
+  color: var(--hero-muted);
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -45,7 +46,7 @@
 
 .login-field label {
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--hero-muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -53,9 +54,9 @@
 .login-field input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   padding: 0.6rem 0;
-  color: var(--text);
+  color: var(--hero-text);
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 300;
@@ -75,8 +76,8 @@
 
 .login-btn {
   background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--hero-text);
+  border: 1px solid rgba(255,255,255,0.3);
   padding: 0.75rem;
   font-family: var(--font-heading);
   font-size: 0.78rem;
@@ -89,9 +90,8 @@
 }
 
 .login-btn:hover {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
+  background: var(--hero-text);
+  color: var(--hero-bg);
 }
 
 /* ── Navigation ─────────────────────────────────────────── */
@@ -100,9 +100,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(3, 0, 0, 0.92);
+  background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 1.25rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -116,7 +116,7 @@
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .nav-links {
@@ -129,7 +129,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.55);
   transition: color 0.2s;
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
@@ -137,11 +137,148 @@
 
 .nav-links a:hover,
 .nav-links a.nav-active {
-  color: var(--text);
-  border-bottom-color: var(--text);
+  color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
-/* ── Shared section layout ──────────────────────────────── */
+/* ── Hero (About) ────────────────────────────────────────── */
+#about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--hero-bg);
+  border-bottom: 3px solid var(--accent);
+}
+
+.profile-hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8rem 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: fadeUp 0.8s ease both;
+  width: 100%;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.profile-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.profile-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--hero-text);
+  text-transform: uppercase;
+}
+
+.profile-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--hero-muted);
+}
+
+.profile-summary {
+  font-size: 1rem;
+  color: var(--hero-muted);
+  max-width: 560px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.profile-meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35);
+  flex-wrap: wrap;
+}
+
+.profile-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  padding: 0.7rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* In hero: white fill / ghost */
+.btn-primary {
+  background: var(--hero-text);
+  color: var(--hero-bg);
+  border: 1px solid var(--hero-text);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--hero-text);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--hero-muted);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-outline:hover {
+  color: var(--hero-text);
+  border-color: var(--hero-text);
+}
+
+/* In white sections: dark fill / ghost */
+.btn-dark {
+  background: var(--text);
+  color: #ffffff;
+  border: 1px solid var(--text);
+}
+
+.btn-dark:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-dark-outline {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.btn-dark-outline:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+/* ── Shared section layout (white sections) ─────────────── */
 .section {
   max-width: 960px;
   margin: 0 auto;
@@ -175,118 +312,6 @@
   margin: 0 2rem;
 }
 
-/* ── Profile / Hero ──────────────────────────────────────── */
-#about {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  padding: 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.profile-hero {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 8rem 2rem 6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  animation: fadeUp 0.8s ease both;
-  width: 100%;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.profile-eyebrow {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.profile-name {
-  font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-
-.profile-title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.profile-summary {
-  font-size: 1rem;
-  color: var(--text-muted);
-  max-width: 560px;
-  line-height: 1.9;
-  font-weight: 300;
-  margin-top: 0.5rem;
-}
-
-.profile-meta {
-  display: flex;
-  gap: 2rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: var(--text-dim);
-  flex-wrap: wrap;
-}
-
-.profile-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.7rem 2rem;
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.25s;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: var(--text);
-  color: var(--bg);
-  border: 1px solid var(--text);
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--text);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-}
-
-.btn-outline:hover {
-  color: var(--text);
-  border-color: var(--text);
-}
-
 /* ── Work Experience ────────────────────────────────────── */
 .exp-list {
   display: flex;
@@ -295,7 +320,7 @@
 }
 
 .exp-card {
-  border-left: 1px solid var(--border);
+  border-left: 2px solid var(--border);
   padding-left: 1.75rem;
   transition: border-color 0.2s;
 }
@@ -394,6 +419,7 @@
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 1.5rem;
+  background: var(--bg);
 }
 
 .skill-category {
@@ -430,7 +456,6 @@
   opacity: 0.8;
 }
 
-
 /* ── Projects ────────────────────────────────────────────── */
 .projects-list {
   display: flex;
@@ -463,6 +488,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--text);
 }
 
 .project-desc {
@@ -516,6 +542,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.3rem;
+  color: var(--text);
 }
 
 .edu-degree {
@@ -566,6 +593,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
+  color: var(--text);
 }
 
 .reference-title {
@@ -601,6 +629,54 @@
   color: var(--text-dim);
 }
 
+/* ── Dot Navigation ─────────────────────────────────────── */
+.dot-nav {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 200;
+}
+
+.dot-nav-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.25s, transform 0.25s, border-color 0.25s;
+  display: block;
+}
+
+.dot-nav-item:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.3);
+}
+
+.dot-nav-item.dot-nav-active {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* When scrolled into white sections, dots flip to dark */
+.dot-nav.dark .dot-nav-item {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dot-nav.dark .dot-nav-item:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.dot-nav.dark .dot-nav-item.dot-nav-active {
+  background: #111111;
+  border-color: #111111;
+}
+
 /* ── Loading ────────────────────────────────────────────── */
 .loading {
   color: var(--text-dim);
@@ -618,4 +694,5 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border-top: 1px solid var(--border);
+  background: var(--bg);
 }

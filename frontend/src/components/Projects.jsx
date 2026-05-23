@@ -12,7 +12,7 @@ export default function Projects({ data }) {
             <div className="project-header">
               <h3 className="project-name">{project.name}</h3>
               {project.repoUrl && (
-                <a className="btn btn-outline" href={project.repoUrl} target="_blank" rel="noreferrer">
+                <a className="btn btn-dark-outline" href={project.repoUrl} target="_blank" rel="noreferrer">
                   View Repo
                 </a>
               )}

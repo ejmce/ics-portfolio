@@ -66,14 +66,29 @@ function App() {
     return () => observer.disconnect()
   }, [profile, experience, skills, projects, education, references])
 
+  const sections = ['about','experience','skills','projects','education','references']
+
   if (!isAuthenticated) return <Login onLogin={handleLogin} />
 
   return (
     <div>
+      {/* Right-side dot navigation — dark class when over white sections */}
+      <nav className={`dot-nav${activeSection !== 'about' ? ' dark' : ''}`}>
+        {sections.map(id => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={`dot-nav-item${activeSection === id ? ' dot-nav-active' : ''}`}
+            aria-label={id}
+            title={id.charAt(0).toUpperCase() + id.slice(1)}
+          />
+        ))}
+      </nav>
+
       <nav className="nav">
         <span className="nav-brand">{profile?.name ?? 'Portfolio'}</span>
         <div className="nav-links">
-          {['about','experience','skills','projects','education','references'].map(id => (
+          {sections.map(id => (
             <a key={id} href={`#${id}`} className={activeSection === id ? 'nav-active' : ''}>
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </a>
