@@ -66,7 +66,7 @@ function App() {
     return () => observer.disconnect()
   }, [profile, experience, skills, projects, education, references])
 
-  const sections = ['about','experience','skills','projects','education','references']
+  const sections = ['about','skills','experience','projects','education','references']
 
   if (!isAuthenticated) return <Login onLogin={handleLogin} />
 
@@ -80,8 +80,9 @@ function App() {
             href={`#${id}`}
             className={`dot-nav-item${activeSection === id ? ' dot-nav-active' : ''}`}
             aria-label={id}
-            title={id.charAt(0).toUpperCase() + id.slice(1)}
-          />
+          >
+            <span className="dot-label">{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+          </a>
         ))}
       </nav>
 

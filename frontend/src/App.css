@@ -632,49 +632,77 @@
 /* ── Dot Navigation ─────────────────────────────────────── */
 .dot-nav {
   position: fixed;
-  right: 1.5rem;
+  right: 1.75rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
   z-index: 200;
 }
 
 .dot-nav-item {
-  width: 8px;
-  height: 8px;
+  position: relative;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   transition: background 0.25s, transform 0.25s, border-color 0.25s;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 .dot-nav-item:hover {
-  background: rgba(255, 255, 255, 0.7);
-  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.75);
+  transform: scale(1.2);
 }
 
 .dot-nav-item.dot-nav-active {
   background: #ffffff;
   border-color: #ffffff;
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
-/* When scrolled into white sections, dots flip to dark */
+/* Label appears to the left of the dot on hover — no box, just text */
+.dot-label {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.dot-nav-item:hover .dot-label {
+  opacity: 1;
+}
+
+/* When scrolled into white sections, dots and labels flip to dark */
 .dot-nav.dark .dot-nav-item {
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.35);
 }
 
 .dot-nav.dark .dot-nav-item:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .dot-nav.dark .dot-nav-item.dot-nav-active {
-  background: #111111;
-  border-color: #111111;
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+}
+
+.dot-nav.dark .dot-label {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* ── Loading ────────────────────────────────────────────── */
