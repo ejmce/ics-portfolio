@@ -3,6 +3,7 @@ export default function Experience({ data }) {
 
   return (
     <section className="section" id="experience">
+      <p className="section-label">Career</p>
       <h2 className="section-title">Work Experience</h2>
       <div className="exp-list">
         {data.map(job => (

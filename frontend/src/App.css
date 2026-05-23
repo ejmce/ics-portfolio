@@ -4,92 +4,106 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 40%, rgba(79,142,247,0.08) 0%, transparent 65%);
+  background: var(--bg);
 }
 
 .login-card {
-  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2.5rem;
+  padding: 3rem;
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
 }
 
 .login-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
 }
 
 .login-subtitle {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 1.75rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.25rem;
 }
 
 .login-field {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .login-field label {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
-  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .login-field input {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.6rem 0.85rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0;
   color: var(--text);
+  font-family: var(--font-body);
   font-size: 0.95rem;
+  font-weight: 300;
   outline: none;
   transition: border-color 0.2s;
 }
 
 .login-field input:focus {
-  border-color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .login-error {
-  font-size: 0.85rem;
-  color: #f87171;
+  font-size: 0.78rem;
+  color: #e05555;
+  letter-spacing: 0.05em;
 }
 
 .login-btn {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius);
-  padding: 0.65rem;
-  font-size: 0.95rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
   font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 0.25rem;
+  transition: all 0.25s;
+  margin-top: 0.5rem;
 }
 
 .login-btn:hover {
-  background: var(--accent-hover);
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
 }
 
 /* ── Navigation ─────────────────────────────────────────── */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: var(--surface);
+  left: 0;
+  right: 0;
+  background: rgba(3, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 2rem;
+  padding: 1.25rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,156 +111,209 @@
 }
 
 .nav-brand {
-  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--accent);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-links a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  font-size: 0.9rem;
   transition: color 0.2s;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
 }
 
 .nav-links a:hover,
 .nav-links a.nav-active {
-  color: var(--accent);
-}
-
-.nav-links a.nav-active {
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 2px;
+  color: var(--text);
+  border-bottom-color: var(--text);
 }
 
 /* ── Shared section layout ──────────────────────────────── */
 .section {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
 }
 
 .section-title {
-  font-size: 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
   color: var(--text);
-  border-left: 3px solid var(--accent);
-  padding-left: 0.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .divider {
   border: none;
   border-top: 1px solid var(--border);
+  margin: 0 2rem;
 }
 
 /* ── Profile / Hero ──────────────────────────────────────── */
 #about {
-  background: radial-gradient(ellipse at 20% 50%, rgba(79,142,247,0.07) 0%, transparent 60%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .profile-hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8rem 2rem 6rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding-top: 2rem;
-  animation: fadeUp 0.6s ease both;
+  gap: 1.25rem;
+  animation: fadeUp 0.8s ease both;
+  width: 100%;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+.profile-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .profile-name {
-  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .profile-title {
-  font-size: 1.25rem;
-  color: var(--accent);
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .profile-summary {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  max-width: 620px;
-  line-height: 1.8;
+  max-width: 560px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin-top: 0.5rem;
 }
 
 .profile-meta {
   display: flex;
-  gap: 1.5rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  gap: 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
   flex-wrap: wrap;
 }
 
 .profile-links {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius);
-  font-size: 0.9rem;
-  font-weight: 500;
+  padding: 0.7rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.25s;
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text);
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  color: #fff;
+  background: transparent;
+  color: var(--text);
 }
 
 .btn-outline {
-  border: 1px solid var(--border);
+  background: transparent;
   color: var(--text-muted);
+  border: 1px solid var(--border);
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  color: var(--text);
+  border-color: var(--text);
 }
 
 /* ── Work Experience ────────────────────────────────────── */
 .exp-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .exp-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
+  border-left: 1px solid var(--border);
+  padding-left: 1.75rem;
+  transition: border-color 0.2s;
+}
+
+.exp-card:hover {
+  border-left-color: var(--accent);
 }
 
 .exp-header {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .exp-company {
-  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
@@ -266,63 +333,77 @@
 }
 
 .exp-title {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--accent);
-  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 .exp-period {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
 }
 
 .exp-bullets {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
+  gap: 0.5rem;
+  padding-top: 1rem;
 }
 
 .exp-bullets li {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  padding-left: 1rem;
+  padding-left: 1.1rem;
   position: relative;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 .exp-bullets li::before {
-  content: '▸';
+  content: '—';
   position: absolute;
   left: 0;
-  color: var(--accent);
+  color: var(--text-dim);
   font-size: 0.75rem;
-  top: 0.15rem;
 }
 
 /* ── Skills ─────────────────────────────────────────────── */
+.skills-legend {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.skills-legend span {
+  color: var(--accent);
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 .skill-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem;
 }
 
 .skill-category {
-  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
   font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
 }
 
 .skill-tags {
@@ -332,103 +413,95 @@
 }
 
 .skill-tag {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.2rem 0.55rem;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  font-weight: 400;
   color: var(--text-muted);
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0;
 }
 
 .skill-tag.learning {
-  border-color: rgba(79, 142, 247, 0.4);
   color: var(--accent);
-  background: rgba(79, 142, 247, 0.08);
 }
 
 .skill-tag.learning::after {
   content: ' ✦';
-  font-size: 0.65rem;
-  opacity: 0.7;
+  font-size: 0.6rem;
+  opacity: 0.8;
 }
 
-.skills-legend {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
-}
-
-.skills-legend span {
-  color: var(--accent);
+.skill-tag:not(:last-child)::after:not(.learning::after) {
+  content: ',';
 }
 
 /* ── Projects ────────────────────────────────────────────── */
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0;
+  border-top: 1px solid var(--border);
 }
 
 .project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  transition: border-color 0.2s;
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+  transition: padding-left 0.25s;
 }
 
 .project-card:hover {
-  border-color: var(--accent);
+  padding-left: 1rem;
 }
 
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   gap: 1rem;
 }
 
 .project-name {
-  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-desc {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 640px;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 1.25rem;
 }
 
 .tech-tag {
-  background: rgba(79, 142, 247, 0.1);
-  color: var(--accent);
-  border: 1px solid rgba(79, 142, 247, 0.25);
-  border-radius: 4px;
-  padding: 0.2rem 0.55rem;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
 }
 
 /* ── Education ──────────────────────────────────────────── */
 .edu-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0;
+  border-top: 1px solid var(--border);
 }
 
 .edu-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
 }
 
 .edu-header {
@@ -440,14 +513,18 @@
 }
 
 .edu-school {
-  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
 }
 
 .edu-degree {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 300;
 }
 
 .edu-meta {
@@ -455,80 +532,93 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 0.2rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 /* ── References ─────────────────────────────────────────── */
+.references-on-request {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  font-style: italic;
+}
+
 .references-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 .reference-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem;
 }
 
 .reference-name {
-  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
   font-weight: 700;
-  margin-bottom: 0.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
 }
 
 .reference-title {
   color: var(--accent);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
 }
 
 .reference-company {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
 }
 
 .reference-relationship {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
 }
 
-.references-on-request {
-  color: var(--text-muted);
-  font-style: italic;
-}
-
 .reference-email {
-  font-size: 0.85rem;
-  color: var(--accent);
+  font-size: 0.82rem;
+  color: var(--text-muted);
   margin-bottom: 0.2rem;
 }
 
 .reference-phone {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  color: var(--text-dim);
 }
 
-/* ── Loading state ──────────────────────────────────────── */
+/* ── Loading ────────────────────────────────────────────── */
 .loading {
-  color: var(--text-muted);
-  font-style: italic;
-  padding: 1rem 0;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* ── Footer ─────────────────────────────────────────────── */
 .footer {
   text-align: center;
-  padding: 2rem;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  padding: 2.5rem 2rem;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   border-top: 1px solid var(--border);
-  margin-top: 2rem;
 }

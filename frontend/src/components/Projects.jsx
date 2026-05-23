@@ -4,6 +4,7 @@ export default function Projects({ data }) {
 
   return (
     <section className="section" id="projects">
+      <p className="section-label">Selected Work</p>
       <h2 className="section-title">Projects</h2>
       <div className="projects-list">
         {data.map(project => (

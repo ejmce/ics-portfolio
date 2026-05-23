@@ -6,6 +6,7 @@ export default function Skills({ data }) {
 
   return (
     <section className="section" id="skills">
+      <p className="section-label">Expertise</p>
       <h2 className="section-title">Skills</h2>
       <p className="skills-legend"><span>✦ Currently learning</span></p>
       <div className="skills-grid">

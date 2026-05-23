@@ -1,6 +1,7 @@
 export default function References({ data }) {
   if (!data.length) return (
     <section className="section" id="references">
+      <p className="section-label">Contacts</p>
       <h2 className="section-title">References</h2>
       <p className="references-on-request">Available upon request.</p>
     </section>
@@ -8,6 +9,7 @@ export default function References({ data }) {
 
   return (
     <section className="section" id="references">
+      <p className="section-label">Contacts</p>
       <h2 className="section-title">References</h2>
       <div className="references-grid">
         {data.map(ref => (

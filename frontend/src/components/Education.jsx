@@ -3,6 +3,7 @@ export default function Education({ data }) {
 
   return (
     <section className="section" id="education">
+      <p className="section-label">Academic Background</p>
       <h2 className="section-title">Education</h2>
       <div className="edu-list">
         {data.map(edu => (
