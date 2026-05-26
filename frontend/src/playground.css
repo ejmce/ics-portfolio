@@ -147,7 +147,6 @@
   color: var(--accent);
 }
 
-/* When a game is live, use this class instead of pg-badge */
 .pg-play-btn {
   font-family: var(--font-heading);
   font-size: 0.65rem;
@@ -178,4 +177,49 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Calculator ─────────────────────────────────────────── */
+.calc-wrapper {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.calc-display {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: right;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.calc-grid button {
+  background: #2a2a2a;
+  color: #ffffff;
+  border: none;
+  padding: 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.calc-grid button:hover {
+  background: #3a3a3a;
+}
+
+.btn-operator {
+  background: var(--accent) !important;
+}
+
+.btn-operator:hover {
+  background: var(--accent-hover) !important;
 }

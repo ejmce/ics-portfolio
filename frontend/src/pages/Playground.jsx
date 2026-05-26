@@ -6,7 +6,7 @@ const PROJECTS = [
     id: 'calculator',
     name: 'Calculator',
     desc: 'A clean, keyboard-friendly calculator built in React.',
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     id: '2048',
@@ -17,7 +17,7 @@ const PROJECTS = [
   {
     id: 'snake',
     name: 'Snake',
-    desc: 'Classic Snake — eat, grow, don\'t hit the wall.',
+    desc: "Classic Snake — eat, grow, don't hit the wall.",
     status: 'coming-soon',
   },
 ]
@@ -47,7 +47,10 @@ export default function Playground() {
                 <p className="pg-card-desc">{p.desc}</p>
               </div>
               <div className="pg-card-footer">
-                <span className="pg-badge">Coming Soon</span>
+                {p.status === 'live'
+                  ? <Link to={`/playground/${p.id}`} className="pg-play-btn">Play</Link>
+                  : <span className="pg-badge">Coming Soon</span>
+                }
               </div>
             </div>
           ))}

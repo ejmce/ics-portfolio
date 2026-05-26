@@ -9,6 +9,7 @@ import Education from './components/Education'
 import References from './components/References'
 import Playground from './pages/Playground'
 import './App.css'
+import Calculator from './pages/Calculator'
 
 function App() {
   // Persist login across page refreshes using sessionStorage.
@@ -124,6 +125,7 @@ function App() {
     <Routes>
       <Route path="/" element={portfolio} />
       <Route path="/playground" element={<Playground />} />
+      <Route path="/playground/calculator" element={<Calculator />} />
     </Routes>
   )
 }
