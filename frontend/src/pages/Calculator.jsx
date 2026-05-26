@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Calculator() {
   const [display, setDisplay] = useState('0')
@@ -38,8 +39,15 @@ export default function Calculator() {
   }
 
   return (
-    <div className="calc-wrapper">
-      <div className="calc-display">{display}</div>
+    <div className="pg-page">
+      <nav className="pg-nav">
+        <Link to="/playground" className="pg-back">← Playground</Link>
+        <span className="pg-nav-brand">Calculator</span>
+      </nav>
+
+      <main className="pg-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '8rem' }}>
+        <div className="calc-wrapper">
+          <div className="calc-display">{display}</div>
       <div className="calc-grid">
         <button onClick={() => handleDigit('7')}>7</button>
         <button onClick={() => handleDigit('8')}>8</button>
@@ -63,6 +71,8 @@ export default function Calculator() {
 
         <button onClick={handleClear}>C</button>
       </div>
+    </div>
+      </main>
     </div>
   )
 }
